@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>display page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <style>
+            .contain{
+                font-size: 30px;
+                color: black;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            #data, #data1, #data2, #data3, #data4, #data5, #data6{
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+    <body>
+        <center><h1>FORM DATA</h1></center>
+        <div class="container" >
+            <div class="contain">
+                    The First Name is: <span id="data" > First Name</span><br> 
+                    The Last Name is <span id="data1"> Last Name</span><br>
+                    The Address is  <span id="data2"> Address</span><br>
+                    The Country is  <span id="data3"> Address</span><br>
+                    The language i know are <span id="data4">language</span><br>
+                    I am interested in <span id="data5">programing language</span><br>
+                    The gender is <span id="data6">language</span><br>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("data").innerHTML=localStorage.getItem("txtValue");
+            document.getElementById("data1").innerHTML=localStorage.getItem("txtValue1");
+            document.getElementById("data2").innerHTML=localStorage.getItem("txtValue2");
+            document.getElementById("data3").innerHTML=localStorage.getItem("txtValue3");
+            const divCheckedArrayString = localStorage.getItem('divCheckedArray');
+            debugger;
+            if (divCheckedArrayString) {
+                const divCheckedArray = JSON.parse(divCheckedArrayString);
+                const textString1 = divCheckedArray.map(item => item).join(', ');
+                console.log('Text Data:', textString1);
+                document.getElementById("data4").innerHTML = textString1;
+            } else {
+                console.log('divDataArray not found in local storage.');
+            }
+            const divDataArrayString = localStorage.getItem('divDataArray');
+            if (divDataArrayString) {
+                const divDataArray = JSON.parse(divDataArrayString);
+                const textString = divDataArray.map(item => item.text).join(', ');
+                console.log('Text Data:', textString);
+                document.getElementById("data5").innerHTML = textString;
+            } else {
+                console.log('divDataArray not found in local storage.');
+            }
+                document.getElementById("data6").innerHTML=(localStorage.getItem("txtValue4"))?"male":female;
+
+    
+        </script>
+    </body>
+</html>

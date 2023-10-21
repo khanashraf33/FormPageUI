@@ -1,0 +1,302 @@
+<html>
+    <head>
+        <title>hello</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <style>
+            #backk{
+                @media (max-width: 576px) {
+                    background-color: aqua;
+                }
+            }
+            #backk {
+            @media (min-width: 576px) {
+            background-color: bisque;
+            }
+        }
+
+            #hidding {
+            @media (max-width: 576px) {
+            display: none;
+            }
+
+            }
+            /* #backkk{
+                @media (max-width: 576px) {
+                background-image: url('./image/Background_image.png');
+                }
+            } */
+        </style>
+            <style>
+                #selected-divs {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .selected-div {
+                    display: flex;
+                    align-items: center;
+                    margin: 5px;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    background-color: #f0f0f0;
+                }
+                .cancel-button {
+                    margin-left: 10px;
+                    cursor: pointer;
+                }
+            </style>
+    </head>
+    <body>
+        <div id="backkk">
+        <div class="row">
+            <div style="height: 20px;"></div>
+        </div>
+        <div class="row" id="outer-page">
+            <div class="col-2"></div>
+
+            <div class="col-8">
+                     <div class="card">
+                        <div class="card-header">
+                            <center><h1>REGISTRATION</h1></center>
+                        </div>
+                        <div class="card-body" id="backk">
+                                <div class="mb-2">
+                                    <label for="firstName" class="form-label">First Name</label>
+                                    <input type="text" class="form-control" name="firstName" id="firstName" >
+                                </div>
+                                <div class="mb-2">
+                                    <label for="lastName" class="form-label">Last Name</label>
+                                    <input type="text" class="form-control" name="lastName" id="lastName" >
+                                </div>
+                                <div class="mb-4">
+                                    <label for="lastName" class="form-label"><Address>Address</Address></label>
+                                    <textarea class="form-control" name="address" id="address"></textarea>
+                                </div>
+                                <div class="mb-2">
+                                    <label for="lastName" class="form-label">Country</label>
+                                    <select class="form-select" name="country" id="country">
+                                        <option selected>Open this select menu</option>
+                                        <option value="India">India</option>
+                                        <option value="USA">USA</option>
+                                        <option value="japan">japan</option>
+                                        <option value="UAE">UAE</option>
+                                      </select>
+                                </div>
+                                <strong><label class="form-check-label">KNOWN LANGUAGE</label></strong>
+                                <div class="container mb-2">
+                                    <div class="row">
+                                        <div class="form-check col-md-4">
+                                            <input class="form-check-input" type="checkbox"  name="inputCheck" value="ENGLISH" />ENGLISH
+                                        </div>
+                                        <div class="form-check  col-md-4">
+                                            <input class="form-check-input" type="checkbox"  name="inputCheck" value="HINDI" />HINDI
+                                        </div>
+                                        <div class="form-check  col-md-4">
+                                            <input class="form-check-input" type="checkbox"  name="inputCheck" value="MARATHI" />MARATHI
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container mb-2 d-grid">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <strong><label class="form-check-label">GENDER</label></strong>
+                                        </div>  
+                                        <div class="form-check col-md-8">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <input class="form-check-input" type="radio" name="gender" id="Gender" value="Male">Male
+                                                </div>
+                                                <div class="col-sm-6">
+                                                    <input class="form-check-input" type="radio" name="gender" id="Gender" value="Female">Female
+                                                </div>
+                                            </div>
+
+
+                                            
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="container mb-2">
+                                    <div class="row">
+                                        <div class="col-sm-6 p-4">
+                                            <center>
+                                                <b><label for="skill">CHOOSE YOUR INTEREST  </label></b>
+                                            </center>
+                                            
+                                        </div>
+                                        <div class="col-sm-6 p-1 mt-3">
+                                            <div class="dropdown">
+                                                <center>
+                                                    <button class="dropbtn btn btn-primary" onclick="toggleDropdown1()">Select options</button>
+                                                </center>
+                                            </div>
+                                        
+
+                                        </div>
+                                    </div>
+                                    <div class="container mb-2">
+                                        <div class="row">
+                                            <div class="col-sm-6 p-4" id="hidding">
+                                            </div>
+                                            <div class="col-sm-6 p-1">
+                                                <div class="dropdown-content" id="dropdown">
+                                                    <select id="options" class="form-select" multiple>
+                                                        <option value="div1">Html</option>
+                                                        <option value="div2">CSS</option>
+                                                        <option value="div3">Java Script</option>
+                                                        <option value="div4">Core Java</option>
+							<option value="div5">Dot net</option>
+                                                        <option value="div6">C#</option>
+                                                        <option value="div7">Advance java</option>
+                                                        <option value="div8">Mern Stack</option>
+                                                    </select>
+                                                </div>
+                                                <div id="selected-divs"></div> 
+                                            </div>
+                                        </div>
+                                    </div>
+                  </div>
+                  <div>
+                    
+                  </div>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-sm-6 mb-2">
+                                            <center><button class="btn btn-primary w-75" onclick="getData()">Submit</button></center>
+                                        </div>
+                                        <div class="col-sm-6 mb-2">
+                                            <center><button type="reset" class="btn btn-warning w-75">Reset</button></center>
+                                        </div>
+                                    </div>
+                               
+                                
+                                </div>
+                        </div>
+                        <div class="card-footer"><center><h5>GOOD DAY</h5></center></div>
+        </div>
+            </div>
+
+            <div class="col-2"></div>
+
+        </div>
+    </div>
+        
+   <script>
+            let divDataArray = [];
+    function getData()
+{
+    var firstName = document.getElementById("firstName").value;
+    var lastName= document.getElementById("lastName").value; 
+    var address= document.getElementById("address").value; 
+    var country= document.getElementById("country").value;
+    var gender= document.getElementById("Gender").checked;
+    localStorage.setItem("txtValue", firstName);
+    localStorage.setItem("txtValue1", lastName); 
+    localStorage.setItem("txtValue2", address); 
+    localStorage.setItem("txtValue3", country);
+    localStorage.setItem("txtValue4", gender); 
+
+    function printChecked() {
+         var items = document.getElementsByName("inputCheck");
+         var arr=[];
+         for (var i = 0; i < items.length; i++) {
+            if (items[i].type == "radio" && items[i].checked == true){
+               arr.push(items[i].value);
+               console.log(items[i].value)
+            }
+         }
+         localStorage.setItem("ddvalue", arr);
+         return true;
+        }
+        printChecked();
+        function printRadio() {
+         var items = document.getElementsByName("gender");
+         var arr=[];
+         for (var i = 0; i < items.length; i++) {
+            if (items[i].type == "checkbox" && items[i].checked == true){
+               arr.push(items[i].value);
+            }
+         }
+         localStorage.setItem("dd1", arr);
+         return true;
+        }
+        printRadio();
+        storeSelectedOptions();
+}
+
+
+
+const selectedValues = [];
+function handleCheckboxChange(event) {
+    const checkbox = event.target;
+    const value = checkbox.value;
+
+    if (checkbox.checked) {
+        selectedValues.push(value);
+    } else {
+        const index = selectedValues.indexOf(value);
+        if (index !== -1) {
+            selectedValues.splice(index, 1);
+        }
+    }
+    console.log('Selected Values:', selectedValues);
+}
+const checkboxes = document.querySelectorAll('input[name="inputCheck"]');
+checkboxes.forEach((checkbox) => {
+    checkbox.addEventListener('change', handleCheckboxChange);
+});
+
+
+        const dropdown1 = document.getElementById('dropdown');
+        dropdown1.style.display = 'none';
+        function toggleDropdown1() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        }
+
+        function storeSelectedOptions() {
+    const options = document.getElementById('options');
+    const selectedOptions = Array.from(options.selectedOptions);
+    localStorage.setItem('divDataArray', JSON.stringify(divDataArray)); 
+    localStorage.setItem('divCheckedArray', JSON.stringify(selectedValues)); 
+    window.location.href = 'display.html';
+}
+        function createSelectedDiv(option) {
+            const selectedDivs = document.getElementById('selected-divs');
+            const div = document.createElement('div');
+            div.className = 'selected-div';
+            div.textContent = option.text;
+            const cancelBtn = document.createElement('span');
+            cancelBtn.className = 'cancel-button';
+            cancelBtn.textContent = 'Cancel';
+            cancelBtn.addEventListener('click', function () {
+                selectedDivs.removeChild(div);
+                option.selected = false;
+                const dataIndex = divDataArray.findIndex(item => item.option === option.value);
+                if (dataIndex !== -1) {
+                    divDataArray.splice(dataIndex, 1);
+                }
+            });
+            div.appendChild(cancelBtn);
+            selectedDivs.appendChild(div);
+            divDataArray.push({ option: option.value, text: option.text });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const options = document.getElementById('options');
+
+            options.addEventListener('change', function() {
+                const selectedOptions = Array.from(options.selectedOptions);
+                document.getElementById('selected-divs').innerHTML = '';
+                divDataArray = [];
+                selectedOptions.forEach(option => {
+                    createSelectedDiv(option);
+                });
+            });
+        });
+    </script>
+        
+    </body>
+</html>
